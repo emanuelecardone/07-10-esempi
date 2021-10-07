@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 300px;
+    height: 300px;
+}
+
+.red{
+    background-color: red;
+    /*
+    position: relative;
+    top: 30px;
+    left: 20px;
+    */
+    position: absolute;
+    right: 0;
+    top: 0; /* se uso absolute devo mettere il top :0; per normalizzare il comportamento del browser*/
+}
+
+.green{
+    background-color: green;
+    position: fixed; /* con position fixed si sposterà sempre in riferimento alla Viewport, cioè al contenuto visibile html, quindi in questo caso sarà sempre in alto a destra della pagina, anche in questo caso si sposta dal flusso html */
+    right: 0;
+    top: 0;
+}
+
+/* la position static è quella di default */
+
+/* position relative sposta l'oggetto relativamente alla sua posizione naturale (uso top right bottom left) in % o px 
+la modifica della posizione avviene solo a livello visivo, ma in realtà rimane nella sua posizione originale per il flusso del documento*/
+
+.purple{
+    background-color: purple;
+    position: absolute;
+    top: 0;
+    left: 0; /* se uso absolute devo mettere il left :0; per normalizzare il comportamento del browser*/
+}
+
+/* position absolute sposta l'elemento relativamente al contenitore, cioè il primo antenato che ha un posizionamento diverso da static, 
+in questo caso l'elemento viene rimosso dal flusso del documento e quell'elemento viene reso inline-block */
+
+.blue{
+    background-color: blue;
+    position: absolute;
+    bottom: 0; /*lo metto in basso */
+    right: 0; /* lo metto a destra */
+}
+
+.padre{
+    position: relative;
+    background-color: pink;
+    width: 600px;
+    height: 500px;
+}
+
+/* il modo migliore per impostare un absolute è dare un relative di default al contenitore, e l'elemento si sposterà in base a dove io vedo il padre nella pagina, non rispetto alla posizione reale del contenitore nel flusso della pagina */
+
+.padre2{
+    background-color: black;
+    width: 1200px;
+    height: 1200px;
+    position: relative;
+}
+
+.cyan{
+    background-color: lightblue;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    z-index: 0;
+}
+
+.grey{
+    background-color: grey;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+.yellow{
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 250px;
+    top: 150px;
+    z-index: 2;
+}
+
+/* con z-index do la priorità di sovrapposizione (il più alto è il più importante) ma gli elementi devono avere tutti una posizione diversa da static */
